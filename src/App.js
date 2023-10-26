@@ -1,10 +1,24 @@
-import logo from './assets/react-logo.png';
+import Video from './pages/Video';
+import { BrowserRouter, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Home from './pages/Home';
+
+const router = createBrowserRouter([
+    {
+        path: "/video/:id", 
+        element: <Video />
+    },
+    {
+        path: "/",
+        element: <Home />
+    }
+
+
+]);
 
 function App() {
     return (
-        <div className="flex h-screen w-screen items-center justify-center">
-            <img className="animate-spin-slow" src={logo} alt="" />
-        </div>
+       <RouterProvider router={router} />
+
     );
 }
 
